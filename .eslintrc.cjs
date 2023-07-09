@@ -1,14 +1,10 @@
 module.exports = {
     env: {
-      node: true,
+        node: true,
     },
-    extends: [
-        'eslint:recommended',
-        "plugin:vue/vue3-recommended",
-        "prettier"
-      ],
+    extends: ["eslint:recommended", "plugin:vue/vue3-recommended", "prettier"],
     rules: {
         "vue/require-default-prop": "off",
-      // 'vue/no-unused-vars': 'error'
-    }
-  }
+        "no-undef": "off",
+    },
+};
