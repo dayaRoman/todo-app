@@ -1,10 +1,18 @@
 <template>
-    <h1>ToDo's</h1>
+    <div class="Todos">
+        <h1>ToDo's</h1>
+        <div class="Todos__wrapper">
+            <TodoItem
+                v-for="(todo, index) of todoList.todos"
+                :key="index"
+                :text="todo.text"
+            >
+            </TodoItem>
+        </div>
 
-    <TodoItem></TodoItem>
-
-    <input v-model="inputText" type="text" />
-    <button @click="onClick">Add ToDo</button>
+        <input v-model="inputText" type="text" />
+        <button @click="onClick">Add ToDo</button>
+    </div>
 </template>
 
 <script setup>
@@ -24,3 +32,14 @@ function onClick() {
     inputText.value = "";
 }
 </script>
+
+<style scoped lang="scss">
+.Todos {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+}
+</style>
